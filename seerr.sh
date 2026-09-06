@@ -58,7 +58,7 @@ function _seerr_install() {
 
     echo "Building seerr (this might take a while)"
     # Limit CPU
-    sed -i "s|256000,|256000,\n    cpus: 6,|g" $HOME/seerr/next.config.js
+    sed -i "s|256000,|256000,\n    cpus: 6,|g" $HOME/seerr/next.config.ts
     pnpm --prefix $HOME/seerr build >> "$log" 2>&1 || {
         echo "Failed to build seerr sqlite"
         exit 1
